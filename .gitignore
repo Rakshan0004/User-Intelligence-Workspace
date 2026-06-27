@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Next.js
+.next/
+out/
+
+# Python
+venv/
+.venv/
+*.pyc
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Docker volumes
+neo4j_data/
+qdrant_data/
+
+# Logs
+*.log
+logs/
+
+# Uploads (local dev)
+uploads/
+temp/
+
+# Database files
+*.db
+*.sqlite3
