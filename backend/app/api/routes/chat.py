@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from sse_starlette.sse import EventSourceResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 import uuid
+import asyncio
 
 from app.api.dependencies import get_db, get_graph_service, get_vector_service, get_memory_manager
 from app.services.graph_service import GraphService

@@ -91,7 +91,7 @@ class ChatOrchestrator:
             # 3. Stream from Gemini directly to the Event Bus
             client = genai.Client(api_key=settings.GEMINI_API_KEY)
             
-            stream = await client.aio.models.generate_content_stream(
+            stream = client.aio.models.generate_content_stream(
                 model="gemini-2.5-flash",
                 contents=query,
                 config=genai.types.GenerateContentConfig(

@@ -21,8 +21,7 @@ class VectorService:
         
         points = []
         for fact in facts:
-            # Placeholder for actual embedding logic
-            fake_embedding = [0.1] * 1536 
+            fake_embedding = [0.1] * 768 
             
             points.append(qmodels.PointStruct(
                 id=str(uuid.uuid5(uuid.NAMESPACE_OID, fact.id)),
@@ -47,7 +46,7 @@ class VectorService:
         
         points = []
         for mem in memories:
-            fake_embedding = [0.1] * 1536 
+            fake_embedding = [0.1] * 768 
             
             points.append(qmodels.PointStruct(
                 id=str(mem.id),
@@ -69,7 +68,7 @@ class VectorService:
 
     async def semantic_search(self, query: str, collection: str, top_k: int = 5, topic: str = None) -> List[Any]:
         """Perform semantic search against a given collection."""
-        fake_embedding = [0.1] * 1536 
+        fake_embedding = [0.1] * 768 
         
         # Build filter if topic provided
         query_filter = None

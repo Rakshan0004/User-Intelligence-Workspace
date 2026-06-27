@@ -40,8 +40,13 @@ class ResearchEventBus:
             while True:
                 payload = await queue.get()
                 
-                # Format for Server-Sent Events
-                yield f"event: {payload['type']}\ndata: {json.dumps(payload['data'])}\n\n"
+                # Format for Server-Sent Events using sse_starlette dictionary format
+                event_data = {
+                    "event": payload['type'],
+                    "data": json.dumps(payload['data']),
+                    "id": payload['timestamp']
+                }
+                yield event_data
                 
                 # Stop if we hit a terminal event
                 if payload['type'] == 'COMPLETE' or payload['type'] == 'ERROR':
